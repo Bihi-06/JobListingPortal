@@ -1,0 +1,59 @@
+<div class="flex justify-center items-center min-h-screen bg-blue-100">
+  <form class="w-full  max-w-md p-6 shadow-2xl rounded-lg bg-white" (ngSubmit)="register()">
+  <div class="flex gap-x-6 mb-6">
+    <div class="w-full relative">
+      <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium"> Name <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444" />
+      </svg>
+      </label>
+      <input type="text" [(ngModel)]="user.name" name="name" id="default-firstName" class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none " placeholder="" required="">
+    </div>
+  </div>
+  <div class="relative mb-6">
+    <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium">Email Address <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444" />
+    </svg>
+    </label>
+    <input type="email" [(ngModel)]="user.email" name="email" id="default-email" class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none " placeholder="" required="">
+  </div>
+  <div class="flex gap-x-6 mb-6">
+    <div class="w-full relative">
+      <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium">Password <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444" />
+      </svg>
+      </label>
+      <input type="password" [(ngModel)]="user.password" name="password" id="default-Password" class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none " placeholder="" required="">
+    </div>
+    <div class="w-full relative">
+      <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium">Confirm Password <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444" />
+      </svg>
+      </label>
+      <input type="password" [(ngModel)]="user.confirmPassword" name="confirmPassword" id="default-PasswordConfirmation" class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none " placeholder="" required="">
+    </div>
+  </div>
+    <div class="block w-full">
+      <label for="Jobs" class="block mb-2 text-sm font-medium text-gray-600 w-full">Choose your Current Job</label>
+      <select id="Jobs" [(ngModel)]="user.currentJob" name="currentJob" class="h-12 border border-gray-300 text-gray-600 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none bg-white">
+        <option selected>Choose your Current Job</option>
+        <option value="STUDENT">Student</option>
+        <option value="EMPLOYED">Employed</option>
+        <option value="UNEMPLOYED">UNEmployed</option>
+        <option value="OTHER">Other</option>
+      </select>
+    </div>
+    <div class="block w-full">
+      <label for="role" class="block mb-2 text-sm font-medium text-gray-600 w-full">You are a</label>
+      <select id="role" [(ngModel)]="user.role" name="role" class="h-12 border border-gray-300 text-gray-600 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none bg-white">
+        <option selected>Choose an Option</option>
+        <option value="JOB_SEEKER">Job Seeker</option>
+        <option value="EMPLOYER">Employer</option>
+      </select>
+    </div>
+    <div class="mb-5">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload your image</label>
+      <input [(ngModel)]="user.pictureUrl" name="pictureUrl" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-white dark:text-gray-400 focus:outline-none dark:bg-white dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+    </div>
+    <button type="submit" class="w-52 h-12 shadow-sm rounded-full bg-blue-950 hover:bg-indigo-800 transition-all duration-700 text-white text-base font-semibold leading-7">Sign Up</button>
+</form>
+</div>
